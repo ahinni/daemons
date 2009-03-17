@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
 
     Daemons includes the daemonize.rb script written by Travis Whitton to do the daemonization process.
 EOF
-  s.version      = "1.0.10.1"
+  s.version      = "1.0.10.2"
   s.date         = "2009-03-17"
   s.platform     = Gem::Platform::RUBY
-  s.authors      = ["Thomas Uehlinger","Travis Whitton","Chris Kline"]
+  s.authors      = ["Thomas Uehlinger","Travis Whitton","Chris Kline","Filip H.F. 'FiXato' Slagter"]
   s.email        = "filip@yomedia.com"
   s.homepage     = "http://github.com/FiXato/daemons"
 
