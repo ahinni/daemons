@@ -33,17 +33,17 @@ spec = Gem::Specification.new do |s|
   s.platform  = Gem::Platform::RUBY
   s.summary = "A toolkit to create and control daemons in different ways"
   s.description = <<-EOF
-    Daemons provides an easy way to wrap existing ruby scripts (for example a self-written server) 
+    Daemons provides an easy way to wrap existing ruby scripts (for example a self-written server)
     to be run as a daemon and to be controlled by simple start/stop/restart commands.
-    
+
     You can also call blocks as daemons and control them from the parent or just daemonize the current
     process.
-    
-    Besides this basic functionality, daemons offers many advanced features like exception 
+
+    Besides this basic functionality, daemons offers many advanced features like exception
     backtracing and logging (in case your ruby script crashes) and monitoring and automatic
     restarting of your processes if they crash.
   EOF
-    
+
   #s.files = FileList["{test,lib}/**/*"].exclude("rdoc").to_a
   s.files = PKG_FILES
   s.require_path = "lib"
@@ -65,7 +65,7 @@ end
 #  p.package_files = PKG_FILES
 #end
 
- 
+
 task :default => [:package]
 
 
@@ -82,3 +82,8 @@ rd = Rake::RDocTask.new("rdoc") { |rdoc|
   rdoc.rdoc_files.include('README', 'TODO', 'Releases')
   rdoc.rdoc_files.include('lib/**/*.rb')
 }
+
+desc 'Package and install the gem for the current version'
+task :install => :gem do
+  system "sudo gem install -l pkg/%s-%s.gem" % [spec.name, spec.version]
+end

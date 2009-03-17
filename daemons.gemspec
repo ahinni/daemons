@@ -1,13 +1,13 @@
 Gem::Specification.new do |s|
   s.name     = "daemons"
-  s.version  = "1.0.11.1"
-  s.date     = "2009-01-07"
+  s.version  = "1.0.10.1"
+  s.date     = "2009-03-17"
   s.summary  = "A toolkit to convert your script to a controllable daemon (with Chris Kline's fix)"
   s.email    = "seamus@abshere.net"
   s.homepage = "http://github.com/seamusabshere/daemons"
   s.description =<<EOF
     This is Daemons 1.0.10 with the addition of Chris Kline's fix from http://blog.rapleaf.com/dev/?p=19
-  
+
     Daemons provides an easy way to wrap existing ruby scripts (for example a self-written server) to be run as a daemon and to be controlled by simple start/stop/restart commands.
 
     If you want, you can also use daemons to run blocks of ruby code in a daemon process and to control these processes from the main application.

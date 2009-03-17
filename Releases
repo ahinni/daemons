@@ -1,8 +1,11 @@
 = Daemons Release History
 
+== Release 1.0.10.1: March 17, 2009
+* Fixed version numbers.
+
 == Release 1.0.10: November 16, 2007
 
-* By default, we now delete stray pid-files (i.e. pid-files which result for 
+* By default, we now delete stray pid-files (i.e. pid-files which result for
   example from a killed daemon) automatically. This function can be deactivated by
   passing :keep_pid_files => true as an option.
 * All pid files of :multiple daemons new get deleted correctly upon exit of the daemons (reported by Han Holl).
@@ -29,7 +32,7 @@
 
 == Release 1.0.5: February 24, 2007
 
-* Applied patch that makes daemons to use '/var/log' as logfile 
+* Applied patch that makes daemons to use '/var/log' as logfile
   directory if you use :dir_mode = :system (thanks to Han Holl).
 * Daemons should now work with Ruby 1.9 (at least the basic features).
 
@@ -48,7 +51,7 @@
 * Changed the 'ps -ax' call back to 'ps ax'.
 * Fixed the documentation for the :normal :dir_mode.
 * As a default for Daemons.run_proc, the pid file is now saved in the current directory.
-* In :ontop mode for running a proc (this is equal to calling something like 'ruby ctrl_proc.rb run'), 
+* In :ontop mode for running a proc (this is equal to calling something like 'ruby ctrl_proc.rb run'),
   the proc now runs directly in the calling script, not in a forked process anymore (thanks to Paul Butcher).
 * Set $0 to app_name in the daemons (thanks to Ilya Novoselov).
 
@@ -62,7 +65,7 @@
 
 == Release 0.4.4: February 14, 2006
 
-* Several fixes that allow us to use the Daemons::Controller 
+* Several fixes that allow us to use the Daemons::Controller
   with a proc instead of wrapping a script file. This gives us all the
   PID file management, monitoring, command line options, etc. without having
   to specify a path to our script which can be tricky, especially when using
@@ -74,7 +77,7 @@
   on calling Daemons.run. This will be used to contruct the name of the pid files
   and log files. Defaults to the basename of the script. (thanks to Stephen R. Veit)
 
-* Bugfix: Handle the case where no controller options are given when calling Daemons, 
+* Bugfix: Handle the case where no controller options are given when calling Daemons,
   just options after "--". (thanks to Stephen R. Veit)
 
 
