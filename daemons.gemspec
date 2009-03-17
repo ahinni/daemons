@@ -1,10 +1,7 @@
 Gem::Specification.new do |s|
-  s.name     = "daemons"
-  s.version  = "1.0.10.1"
-  s.date     = "2009-03-17"
-  s.summary  = "A toolkit to convert your script to a controllable daemon (with Chris Kline's fix)"
-  s.email    = "seamus@abshere.net"
-  s.homepage = "http://github.com/seamusabshere/daemons"
+  # Project
+  s.name         = 'daemons'
+  s.summary      = "A toolkit to convert your script to a controllable daemon (with Chris Kline's fix)"
   s.description =<<EOF
     This is Daemons 1.0.10 with the addition of Chris Kline's fix from http://blog.rapleaf.com/dev/?p=19
 
@@ -16,29 +13,28 @@ Gem::Specification.new do |s|
 
     Daemons includes the daemonize.rb script written by Travis Whitton to do the daemonization process.
 EOF
-  s.has_rdoc = false
-  s.authors  = [
-    "Thomas Uehlinger",
-    "Travis Whitton",
-    "Chris Kline"
-    ]
-  s.files    = [
-    "daemons.gemspec",
-    "lib/daemons/application.rb",
-    "lib/daemons/application_group.rb",
-    "lib/daemons/cmdline.rb",
-    "lib/daemons/controller.rb",
-    "lib/daemons/daemonize.rb",
-    "lib/daemons/exceptions.rb",
-    "lib/daemons/monitor.rb",
-    "lib/daemons/pid.rb",
-    "lib/daemons/pidfile.rb",
-    "lib/daemons/pidmem.rb",
-    "lib/daemons.rb",
-    "LICENSE",
-    "Rakefile",
-    "README",
-    "Releases",
-    "TODO"
-    ]
+  s.version      = "1.0.10.1"
+  s.date         = "2009-03-17"
+  s.platform     = Gem::Platform::RUBY
+  s.authors      = ["Thomas Uehlinger","Travis Whitton","Chris Kline"]
+  s.email        = "filip@yomedia.com"
+  s.homepage     = "http://github.com/FiXato/daemons"
+
+  # Files
+  root_files     = %w[LICENSE README Rakefile Releases TODO daemons.gemspec]
+  lib_files      = %w[daemons]
+  daemon_libs    = %w[application application_group  cmdline  controller  daemonize exceptions monitor pid pidfile pidmem]
+  s.require_path = "lib"
+  s.files        = root_files + lib_files.map {|f| 'lib/%s.rb' % f} + daemon_libs.map {|f| 'lib/daemons/%s.rb' % f}
+
+  # rdoc
+  s.has_rdoc         = true
+  s.extra_rdoc_files = %w[README Releases]
+  s.rdoc_options << '--inline-source' << '--line-numbers' << '--main' << 'README'
+
+  # Dependencies
+  # s.add_dependency 'daemons', ">= 1.0.10.1"
+
+  # Requirements
+  s.required_ruby_version = ">= 1.8.0"
 end
