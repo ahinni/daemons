@@ -21,7 +21,7 @@ EOF
   s.homepage     = "http://github.com/FiXato/daemons"
 
   # Files
-  root_files     = %w[LICENSE README Rakefile Releases TODO daemons.gemspec]
+  root_files     = %w[LICENSE README.rdoc Rakefile Releases TODO daemons.gemspec]
   lib_files      = %w[daemons]
   daemon_libs    = %w[application application_group  cmdline  controller  daemonize exceptions monitor pid pidfile pidmem]
   s.require_path = "lib"
@@ -29,8 +29,8 @@ EOF
 
   # rdoc
   s.has_rdoc         = true
-  s.extra_rdoc_files = %w[README Releases]
-  s.rdoc_options << '--inline-source' << '--line-numbers' << '--main' << 'README'
+  s.extra_rdoc_files = %w[README.rdoc Releases]
+  s.rdoc_options << '--inline-source' << '--line-numbers' << '--main' << 'README.rdoc'
 
   # Dependencies
   # s.add_dependency 'daemons', ">= 1.0.10.1"
