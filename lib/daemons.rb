@@ -66,7 +66,7 @@ require 'timeout'
 #
 module Daemons
 
-  VERSION = "1.0.10.1"
+  VERSION = "1.0.10.2"
 
   require 'daemons/daemonize'
 
