@@ -118,6 +118,9 @@ module Daemons
       @monitor.stop if @monitor
       @monitor = nil
       
+      # we need to start the monitor here, otherwise a new monitor will be started per app
+      create_monitor(applications.first)
+      
       @applications.each {|a| 
         fork { 
           a.start 
